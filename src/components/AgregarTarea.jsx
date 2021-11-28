@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { getFirestore, doc, getDoc, collection, setDoc, onSnapshot, addDoc } from 'firebase/firestore';
+import { useState } from "react";
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import firebaseApp from "../credenciales";
-import {getAuth, signOut} from 'firebase/auth';
+import {getAuth} from 'firebase/auth';
 
 
 const auth =getAuth(firebaseApp);

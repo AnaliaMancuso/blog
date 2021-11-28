@@ -1,10 +1,10 @@
 import React from "react";
 import firebaseApp from "../credenciales";
 import {getAuth, signOut} from 'firebase/auth';
-import { getFirestore, doc, getDoc, collection, setDoc, onSnapshot } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import AgregarTarea from './AgregarTarea';
 import ListadoPosteos from './ListadoPosteos';
-import { useEffect, useState } from "react";
+
 const auth =getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
 
