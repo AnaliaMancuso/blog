@@ -6,7 +6,7 @@ import firebaseApp from "../credenciales";
 const firestore = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp);
 
-let urlDescarga;
+// let urlDescarga;
 
 const AgregarPosteo = ({correoUsuario}) => {
   const [text, setText] = useState(['']);
@@ -15,15 +15,15 @@ const AgregarPosteo = ({correoUsuario}) => {
   // let now = new Date();
   // let fullNow = now.toDateString()
 
-  async function fileHandler(e) {
-    // detectar archivo
-    const archivoLocal = e.target.files[0];
-    // cargarlo a firebase storage
-    const archivoRef = ref(storage, `documentos/${archivoLocal.name}`);
-    await uploadBytes(archivoRef, archivoLocal);
-    // obtener url de descarga
-    urlDescarga = await getDownloadURL(archivoRef);
-  }
+  // async function fileHandler(e) {
+  //   // detectar archivo
+  //   const archivoLocal = e.target.files[0];
+  //   // cargarlo a firebase storage
+  //   const archivoRef = ref(storage, `documentos/${archivoLocal.name}`);
+  //   await uploadBytes(archivoRef, archivoLocal);
+  //   // obtener url de descarga
+  //   urlDescarga = await getDownloadURL(archivoRef);
+  // }
   async function createDoc(e) {
     e.preventDefault(e);
     await addDoc(collection(firestore, 'posteos'), {
