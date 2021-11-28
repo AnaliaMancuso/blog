@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
-import { getFirestore, doc, getDoc, collection, setDoc, onSnapshot, deleteDoc } from 'firebase/firestore';
+import { getFirestore, doc, collection, onSnapshot, deleteDoc } from 'firebase/firestore';
 import firebaseApp from "../credenciales";
-import {getAuth, signOut} from 'firebase/auth';
-import { remove } from "dom-helpers";
 
-const auth =getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
 
 const ListadoPosteos = ( {correoUsuario}) => {
@@ -33,14 +30,14 @@ const ListadoPosteos = ( {correoUsuario}) => {
                     <h3>el nombre es {dato.author} </h3>
                     <h3>titulo:  {dato.title}</h3>
                     <p>anecdota: {dato.text}</p>
-                    <img src={dato.file} />
+                    {/* <img src={dato.file} /> */}
                     {/* <p>fecha: {dato.date}</p> */}
                 
             
                     <button>ver archivo</button>
 
 
-                    {correoUsuario ==  dato.author ? (
+                    {correoUsuario ===  dato.author ? (
                   <button onClick={() => { borrarPosteo(dato.id)}}>eliminar </button>
                 ) : null}
                     

@@ -1,12 +1,10 @@
 import React from "react";
 import firebaseApp from "../credenciales";
 import {getAuth, signOut} from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
 import AgregarTarea from './AgregarTarea';
 import ListadoPosteos from './ListadoPosteos';
 
 const auth =getAuth(firebaseApp);
-const firestore = getFirestore(firebaseApp);
 
 const Home = ({correoUsuario}) => {
 

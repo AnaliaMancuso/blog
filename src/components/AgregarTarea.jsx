@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import firebaseApp from "../credenciales";
-import {getAuth} from 'firebase/auth';
 
-
-const auth =getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
 
 const AgregarTarea = ({correoUsuario}) => {
@@ -12,13 +9,13 @@ const AgregarTarea = ({correoUsuario}) => {
     const [title, setTitle] = useState(['']);
     const [file, setFile] = useState(['']);
 
-    const collRef = collection(firestore,"posteos");
+    collection(firestore,"posteos");
     // let now = new Date();
     // let fullNow = now.toDateString()
     
     async function createDoc(e) {
         e.preventDefault(e);
-        const docRef = await addDoc(collection(firestore, 'posteos'), {
+        await addDoc(collection(firestore, 'posteos'), {
           author: correoUsuario,
           id: + new Date(),
           title: title,

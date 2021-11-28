@@ -16,7 +16,7 @@ const Logueo = () => {
         const pass = e.target.pass.value;
         // try {
             if(estaRegistrandose) {
-                const usuario =createUserWithEmailAndPassword(auth, correo, pass);
+                createUserWithEmailAndPassword(auth, correo, pass);
                 console.log("entró por el register")
             }else {
                 signInWithEmailAndPassword(auth, correo, pass);
