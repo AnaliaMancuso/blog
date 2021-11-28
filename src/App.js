@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import  './App.css';
 import Home from './components/Home';
 import Logueo from './components/Logueo';
 import firebaseApp from './credenciales';
@@ -19,7 +20,6 @@ function App() {
 
   return (
     <>
-     
     {usuarioGlobal ? <Home correoUsuario={usuarioGlobal.email} /> : <Logueo/>}
     </>
   );

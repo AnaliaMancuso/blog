@@ -1,45 +1,28 @@
 import React from "react";
 import firebaseApp from "../credenciales";
 import {getAuth, signOut} from 'firebase/auth';
-import AgregarTarea from './AgregarTarea';
+import AgregarPosteo from './AgregarPosteo';
 import ListadoPosteos from './ListadoPosteos';
 
 const auth =getAuth(firebaseApp);
 
 const Home = ({correoUsuario}) => {
-
-       
-
-
-
-    //para ver un doc
-    // const docuRef = doc(firestore, `posteos/${idDocumento}`);
-    // const consultaDoc = await getDoc(docuRef);
-
-    // async function verPosts() {
-    //     //para ver todos los posteos
-    //     const postsRef = doc(firestore, "posteos");
-    //     const consultaPosts = await getDoc(postsRef);
-    //     const infoPosts = consultaPosts.data();
-    //     return infoPosts
-    // }
-    // useEffect(() => {
-    //     async function listarPosteos(){
-    //         const listar = await verPosts();
-    //         console.log(listar)
-    //     };
-    // }, []);
-
     return (
         <div>
-            <p>inicio y sesion iniciada</p>
-            <p>has ingresado como {correoUsuario}</p>
-            <button onClick={() => signOut(auth)}>cerrar sesion</button>
-            <AgregarTarea correoUsuario={correoUsuario}/>
-            
-
-            <ListadoPosteos correoUsuario={correoUsuario}/>
-
+            <div className="banner">
+                <h1>Masco-Blog</h1>
+                <h2>Subí tu anécdota!</h2>
+            </div>
+            <div className="principal-container">
+                <div className="listado">
+                    <ListadoPosteos correoUsuario={correoUsuario}/>
+                </div>
+                <div className="menu-right">
+                    <p>Has ingresado como {correoUsuario}</p>
+                    <button className="menu-right__button" onClick={() => signOut(auth)}>Salir</button>
+                    <AgregarPosteo correoUsuario={correoUsuario}/>
+                </div>
+            </div>
         </div>
     )
 }

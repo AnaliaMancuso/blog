@@ -6,7 +6,7 @@ const firestore = getFirestore(firebaseApp);
 
 const ListadoPosteos = ( {correoUsuario}) => {
     const [ladata, setlaData] = useState([])
-                //para leer la data de la db
+    //para leer la data de la db
     useEffect(()=> {
         onSnapshot(collection(firestore, "posteos"), (snapshot)=> {
         setlaData(snapshot.docs.map(doc=>doc.data()))
@@ -24,23 +24,27 @@ const ListadoPosteos = ( {correoUsuario}) => {
     // const borrar = await firestore.collection("posteos").doc(idPosteo).delete();
     }
     return (
-        <div>
+        <div className="posteos-container">
             {ladata.map((dato)=> (
-                <div key={dato.id}>
-                    <h3>el nombre es {dato.author} </h3>
-                    <h3>titulo:  {dato.title}</h3>
-                    <p>anecdota: {dato.text}</p>
-                    {/* <img src={dato.file} /> */}
-                    {/* <p>fecha: {dato.date}</p> */}
-                
-            
-                    <button>ver archivo</button>
+                <div key={dato.id} className="posteo-card">
+                    <div className="card-top">
+                        <div className="card-text">
+                            <p> {dato.text}</p>
+                            <h3>{dato.author} </h3>
+                        </div>
+                        {/* <div className="img-placeholder">
+                            <img src={dato.file} />
+                            <p>{dato.file} </p>
 
-
-                    {correoUsuario ===  dato.author ? (
-                  <button onClick={() => { borrarPosteo(dato.id)}}>eliminar </button>
-                ) : null}
-                    
+                        </div> */}
+                    </div>
+                    <div className="button-delete">
+                        {correoUsuario ===  dato.author ? (
+                            <button onClick={() => { borrarPosteo(dato.id)}}>
+                            x 
+                            </button>
+                        ) : null}
+                    </div>
                 </div>
             ))}
         </div>
