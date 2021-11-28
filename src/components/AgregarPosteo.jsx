@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getStorage } from "firebase/storage";
 import firebaseApp from "../credenciales";
 
 const firestore = getFirestore(firebaseApp);
-const storage = getStorage(firebaseApp);
+// const storage = getStorage(firebaseApp);
 
 // let urlDescarga;
 
