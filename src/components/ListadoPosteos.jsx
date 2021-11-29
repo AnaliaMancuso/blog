@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getFirestore, collection, onSnapshot, doc, deleteDoc, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, doc, deleteDoc, getDocs } from 'firebase/firestore';
 import firebaseApp from "../credenciales";
 
 const firestore = getFirestore(firebaseApp);
@@ -42,7 +42,7 @@ const ListadoPosteos = ( {correoUsuario}) => {
                             <h4>{dato.date}</h4>
                         </div>
                         <div className="img-placeholder">
-                            <img src={dato.file} />
+                            <img src={dato.file} alt="imagen"/>
                         </div>
                     </div>
                     <div className="button-delete">

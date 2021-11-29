@@ -2,11 +2,8 @@ import React from "react";
 import Banner from "./Banner";
 import Profile from "./Profile";
 import firebaseApp from "../credenciales";
-import {getAuth, signOut} from 'firebase/auth';
-import AgregarPosteo from './AgregarPosteo';
+import {getAuth} from 'firebase/auth';
 import ListadoPosteos from './ListadoPosteos';
-
-const auth =getAuth(firebaseApp);
 
 const Home = ({correoUsuario}) => {
     return (
