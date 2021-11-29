@@ -33,8 +33,8 @@ const ListadoPosteos = ( {correoUsuario}) => {
                             <h3>{dato.author} </h3>
                         </div>
                         <div className="img-placeholder">
-                            <img src={dato.file} />
-                            <p>{dato.file} </p>
+                            {/* <img src={dato.file} />
+                            <p>{dato.file} </p> */}
 
                         </div>
                     </div>
