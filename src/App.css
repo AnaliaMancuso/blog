@@ -80,7 +80,7 @@
 .img-placeholder img{
   width: 200px;
 }
-.img-placeholder{
+/* .img-placeholder{
   background-image: url('./img/cute-purebred-dogs-studio.jpg');
   width: 200px;
   height: 200px;
@@ -88,7 +88,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 
-}
+} */
 .button-delete {
   display: flex;
   justify-content: center;
