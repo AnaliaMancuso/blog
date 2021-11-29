@@ -32,11 +32,11 @@ const ListadoPosteos = ( {correoUsuario}) => {
                             <p> {dato.text}</p>
                             <h3>{dato.author} </h3>
                         </div>
-                        {/* <div className="img-placeholder">
+                        <div className="img-placeholder">
                             <img src={dato.file} />
                             <p>{dato.file} </p>
 
-                        </div> */}
+                        </div>
                     </div>
                     <div className="button-delete">
                         {correoUsuario ===  dato.author ? (
